@@ -1,0 +1,427 @@
+/*
+ * Responsive Stylesheet
+ * Author: Quốc Bình
+ * Description: Styles for all screen sizes, with a focus on mobile-first design.
+ */
+
+/* ====================================
+   Base Responsive Styles
+   ==================================== */
+:root {
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --text-dark: #2d3748;
+    --text-muted: #718096;
+    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.05);
+    --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--bg-white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ====================================
+   Header & Navigation
+   ==================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    margin: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 2rem;
+}
+
+.hamburger {
+    display: none;
+    width: 25px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 8px; }
+.hamburger span:nth-child(3) { top: 16px; }
+
+.hamburger.active span:nth-child(1) { transform: rotate(45deg); top: 8px; }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg); top: 8px; }
+
+
+/* ====================================
+   Buttons
+   ==================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    margin-right: 30px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary {
+  background: var(--bg-light);
+  color: #333;
+  border-color: #dee2e6;
+}
+
+.btn-secondary:hover {
+  background: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 1.1rem;
+}
+
+/* ====================================
+   Main Content Sections
+   ==================================== */
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+.categories-grid,
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+.checkout-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+.about-visual {
+    width: 300px;
+    height: 300px;
+}
+.store-showcase {
+    background-image: url(../photos/logo\ kizo.png);
+    background-size: cover;
+    background-position: center;
+}
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/* ====================================
+   Mobile & Tablet Responsive
+   ==================================== */
+@media (max-width: 992px) {
+    body.menu-open {
+        overflow: hidden; /* Ngăn cuộn trang khi menu mobile mở */
+    }
+    .container {
+        padding: 0 1rem;
+    }
+    .navbar {
+        padding: 1rem 0.5rem;
+    }
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--bg-white);
+        box-shadow: var(--shadow-medium);
+        z-index: 999;
+        padding-top: 65px;
+        justify-content: flex-start;
+        align-items: center;
+        transition: all 0.3s ease;
+        transform: translateX(-100%);
+    }
+    .nav-menu.active {
+        display: flex;
+        transform: translateX(0);
+    }
+    .nav-menu li {
+        width: 100%;
+        display: flex; /* Dùng flexbox để căn giữa nội dung */
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid var(--bg-light); /* Đường gạch phân chia các mục */
+    }
+    .nav-menu .nav-link {
+        display: inline-block;
+        padding: 1rem;
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: background-color 0.2s ease;
+    }
+    .nav-menu .nav-link:hover {
+        background-color: var(--bg-light);
+    }
+    .hamburger {
+        display: block;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+        padding: 100px 0 60px;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .categories-grid,
+    .products-grid,
+    .about-content,
+    .checkout-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .shop-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .shop-filters {
+        justify-content: center;
+    }
+    .place-order-btn {
+        width: 100%;
+    }
+    .user-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
+
+/* ====================================
+   Smallest Mobile Screens (< 460px)
+   ==================================== */
+@media (max-width: 460px) {
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+    .nav-menu {
+        top: 55px;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-description {
+        font-size: 1rem;
+    }
+    .btn-large {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+    .checkout-form-container,
+    .order-summary {
+        padding: 1rem;
+    }
+    .checkout-form h2,
+    .order-summary h2 {
+        font-size: 1.5rem;
+    }
+    .place-order-btn {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* ====================================
+   Other General Styles (kept from previous code)
+   ==================================== */
+.cart-sidebar.open {
+    right: 0;
+}
+.cart-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+.auth-container {
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+}
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: -0.5rem;
+    left: 0.8rem;
+    font-size: 0.8rem;
+    color: #000000;
+    background: white;
+}

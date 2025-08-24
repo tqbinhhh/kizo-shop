@@ -1,0 +1,179 @@
+ /* Reset và Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #000000;
+      background: #f8f9fa; /* Màu nền nhẹ nhàng cho trang auth */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: auto; /* Cho phép cuộn nếu nội dung dài */
+    }
+
+    .auth-container {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .auth-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(135deg, #000000 0%, #333333 100%); /* Màu chủ đạo */
+    }
+
+    .auth-logo {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .auth-logo img {
+        max-width: 150px; /* Điều chỉnh kích thước tối đa của logo */
+        height: auto; /* Giữ nguyên tỉ lệ ảnh */
+        border-radius: 11px ;
+        border: solid 1px #000;
+    }
+
+    .auth-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .auth-header h2 {
+      color: #000000; /* Màu chủ đạo */
+      margin-bottom: 0.5rem;
+    }
+
+    .auth-header p {
+      color: #718096;
+      font-size: 0.9rem;
+    }
+
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: #f8fafc;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #000000; /* Màu chủ đạo */
+      background: white;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group label {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      color: #718096;
+      transition: all 0.3s ease;
+      pointer-events: none;
+      background: transparent;
+      padding: 0 0.5rem;
+    }
+
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label {
+      top: -0.5rem;
+      left: 0.8rem;
+      font-size: 0.8rem;
+      color: #000000; /* Màu chủ đạo khi label nổi lên */
+      background: white; /* Nền trắng cho label khi nổi lên */
+    }
+
+    .auth-submit {
+      background: linear-gradient(135deg, #000000 0%, #333333 100%); /* Màu chủ đạo */
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .auth-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .auth-switch {
+      text-align: center;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .auth-switch button {
+      background: none;
+      border: none;
+      color: #000000; /* Màu chủ đạo */
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 0.9rem;
+    }
+
+    .auth-switch button:hover {
+      color: #333333; /* Màu chủ đạo khi hover */
+    }
+
+    /* Notification Styles */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      color: white;
+      font-weight: 500;
+      z-index: 10000;
+      transform: translateX(400px);
+      transition: transform 0.3s ease;
+      max-width: 300px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .notification-success { background: #27ae60; }
+    .notification-error { background: #e74c3c; }
+    .notification-warning { background: #f39c12; }
+    .notification-info { background: #000000; }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+      .auth-container {
+        padding: 1.5rem;
+      }
+    }

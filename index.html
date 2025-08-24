@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FashionHub - Thời trang chất lượng, giá tốt</title>
+  <meta name="description" content="FashionHub - Cửa hàng thời trang online với đa dạng mẫu mã, chất lượng cao và giá cả hợp lý">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <span>Kizo</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Trang chủ</a></li>
+          <li><a href="#shop" class="nav-link">Cửa hàng</a></li>
+          <li><a href="#about" class="nav-link">Về chúng tôi</a></li>
+          <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </div>
+          <div class="user-actions" id="userActions">
+            <!-- Buttons will be rendered by JS based on auth status -->
+          </div>
+        </div>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Thời trang <span class="highlight">chất lượng</span> cho mọi nhà
+        </h1>
+        <p class="hero-description">
+          Khám phá bộ sưu tập thời trang đa dạng với thiết kế hiện đại, 
+          chất liệu cao cấp và giá cả hợp lý. Nâng tầm phong cách của bạn ngay hôm nay!
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary btn-large">
+            <i class="fas fa-shopping-bag"></i>
+            Mua sắm ngay
+          </button>
+          <button class="btn btn-outline btn-large">
+            <i class="fas fa-eye"></i>
+            Xem bộ sưu tập
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Khách hàng</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5K+</div>
+            <div class="stat-label">Sản phẩm</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Hài lòng</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-visual">
+          <div class="fashion-showcase">
+            <div class="product-preview">
+              <img src="./assets/photos/sale.webp" alt="Áo thun" class="preview-img">
+            </div>
+            <div class="floating-tags">
+              <span class="tag">-30%</span>
+              <span class="tag">Mới</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2>Danh mục sản phẩm</h2>
+        <p>Khám phá các danh mục thời trang đa dạng</p>
+      </div>
+      <div class="categories-grid">
+        <div class="category-card" data-category="ao">
+          <div class="category-icon">
+            <i class="fas fa-tshirt"></i>
+          </div>
+          <h3>Áo</h3>
+          <p>Áo thun, áo sơ mi, áo khoác</p>
+          <span class="product-count">500+ sản phẩm</span>
+        </div>
+        <div class="category-card" data-category="quan">
+          <div class="category-icon">
+            <i class="fas fa-socks"></i>
+          </div>
+          <h3>Quần</h3>
+          <p>Quần jean, quần tây, quần short</p>
+          <span class="product-count">300+ sản phẩm</span>
+        </div>
+        <div class="category-card" data-category="vay">
+          <div class="category-icon">
+            <i class="fas fa-female"></i>
+          </div>
+          <h3>Váy</h3>
+          <p>Váy đầm, váy công sở, váy dự tiệc</p>
+          <span class="product-count">200+ sản phẩm</p>
+        </div>
+        <div class="category-card" data-category="giay">
+          <div class="category-icon">
+            <i class="fas fa-shoe-prints"></i>
+          </div>
+          <h3>Giày</h3>
+          <p>Giày thể thao, giày công sở, giày cao gót</p>
+          <span class="product-count">150+ sản phẩm</span>
+        </div>
+        <div class="category-card" data-category="tui">
+          <div class="category-icon">
+            <i class="fas fa-shopping-bag"></i>
+          </div>
+          <h3>Túi xách</h3>
+          <p>Túi đeo chéo, túi xách, balo</p>
+          <span class="product-count">100+ sản phẩm</span>
+        </div>
+        <div class="category-card" data-category="phukien">
+          <div class="category-icon">
+            <i class="fas fa-gem"></i>
+          </div>
+          <h3>Phụ kiện</h3>
+          <p>Mũ, khăn, thắt lưng, trang sức</p>
+          <span class="product-count">80+ sản phẩm</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop Section -->
+  <section id="shop" class="shop">
+    <div class="container">
+      <div class="shop-header">
+        <h2>Cửa hàng</h2>
+        <div class="shop-filters">
+          <select id="categoryFilter" class="filter-select">
+            <option value="">Tất cả danh mục</option>
+            <option value="ao">Áo</option>
+            <option value="quan">Quần</option>
+            <option value="vay">Váy</option>
+            <option value="giay">Giày</option>
+            <option value="tui">Túi xách</option>
+            <option value="phukien">Phụ kiện</option>
+          </select>
+          <select id="priceFilter" class="filter-select">
+            <option value="">Tất cả giá</option>
+            <option value="0-100000">Dưới 100k</option>
+            <option value="100000-300000">100k - 300k</option>
+            <option value="300000-500000">300k - 500k</option>
+            <option value="500000+">Trên 500k</option>
+          </select>
+          <select id="sortFilter" class="filter-select">
+            <option value="popular">Phổ biến nhất</option>
+            <option value="newest">Mới nhất</option>
+            <option value="price-low">Giá thấp đến cao</option>
+            <option value="price-high">Giá cao đến thấp</option>
+          </select>
+        </div>
+      </div>
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be loaded here by JavaScript -->
+      </div>
+      <div class="load-more">
+        <button class="btn btn-outline" id="loadMoreBtn">Xem thêm sản phẩm</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Về Kizo</h2>
+          <p>Kizo được thành lập với sứ mệnh mang đến những sản phẩm thời trang chất lượng cao 
+          với giá cả hợp lý cho mọi người. Chúng tôi cam kết cung cấp trải nghiệm mua sắm tuyệt vời 
+          và dịch vụ khách hàng xuất sắc.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <i class="fas fa-check"></i>
+              <span>Chất liệu cao cấp, bền đẹp</span>
+            </div>
+            <div class="about-feature">
+              <i class="fas fa-check"></i>
+              <span>Thiết kế độc đáo, hiện đại</span>
+            </div>
+            <div class="about-feature">
+              <i class="fas fa-check"></i>
+              <span>Giao hàng nhanh chóng toàn quốc</span>
+            </div>
+            <div class="about-feature">
+              <i class="fas fa-check"></i>
+              <span>Đổi trả dễ dàng trong 30 ngày</span>
+            </div>
+          </div>
+          <button class="btn btn-primary">Tìm hiểu thêm</button>
+        </div>
+        <div class="about-image">
+          <div class="about-visual">
+            <div class="store-showcase">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopping Cart Sidebar -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Giỏ hàng</h3>
+      <button class="close-cart" id="closeCart">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be loaded here -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Tổng cộng:</span>
+        <span class="total-amount" id="cartTotal">0đ</span>
+      </div>
+      <div class="cart-actions">
+        <button class="btn btn-outline" id="clearCart">Xóa giỏ hàng</button>
+        <button class="btn btn-primary" id="checkout">Thanh toán</button>
+      </div>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Đăng ký nhận ưu đãi</h2>
+        <p>Nhận thông báo về các sản phẩm mới và khuyến mãi đặc biệt</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Nhập email của bạn..." id="newsletterEmail">
+          <button class="btn btn-primary">Đăng ký</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Kizo @ All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
