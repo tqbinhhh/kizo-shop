@@ -785,6 +785,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 160px;
 }
 
 .store-showcase {
@@ -793,6 +794,7 @@ p {
   height: 300px;
   background-image: url(../photos/logo\ kizo.png);
   background-size: cover;
+  border-radius: 50px;
   background-position: center;
 }
 
