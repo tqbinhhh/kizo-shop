@@ -22,7 +22,7 @@ const products = [
     price: 485000,
     category: "ao",
     image: "./assets/photos/Hoodie.webp",
-    description: "Áo sơ mi nam công sở, chất liệu vải cao cấp"
+    description: "Áo Hoodie"
   },
   {
     id: 7,
