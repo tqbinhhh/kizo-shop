@@ -37,7 +37,7 @@ const products = [
     name: "Balo MLB",
     price: 2450000,
     category: "tui",
-    image: "./assets/photos/balo MLB.webp",
+    image: "./assets/photos/balo mlb.webp",
     description: "Balo bền đẹp, nhiều ngăn tiện lợi"
   },
   {
