@@ -42,7 +42,7 @@ const products = [
   },
   {
     id: 11,
-    name: "Mũ bóng chày",
+    name: "Mũ MLB",
     price: 820000,
     category: "phukien",
     image: "./assets/photos/mu bong chay.jpg",
